@@ -10,7 +10,8 @@ export default function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = inputRef.current.value;
-    
+    console.log(url);
+
     fetch('/api/shortUrl', {
       method: 'POST',
       headers: {
@@ -18,8 +19,11 @@ export default function Home() {
       },
       body: JSON.stringify({url}),
     })
-    .then(res => res.json())
-    .then(data => { setShortURL(data.shortUrl) });
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setShortURL(data.shortUrl)
+      });
   }
 
   return (
@@ -41,12 +45,12 @@ export default function Home() {
 
         <div className={styles.grid}>
           <form className={styles.card} onSubmit={handleSubmit}>
-            <input type="text" className={styles.input} placeholder="URL" />
+            <input ref={inputRef} type="text" className={styles.input} placeholder="URL" />
             <button className={styles.button}>Acorta</button>
             <span className={styles.input}>{shortURL}</span>
           </form>
         </div>
-        
+
       </main>
     </div>
   )
