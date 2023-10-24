@@ -124,6 +124,10 @@
   padding: 1rem;
 }
 
+.span{
+  color: rgb(252, 82, 82);
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

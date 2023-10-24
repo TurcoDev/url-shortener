@@ -10,7 +10,7 @@ export default function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const url = inputRef.current.value;
-    console.log(url);
+    // console.log(url);
 
     fetch('/api/shortUrl', {
       method: 'POST',
@@ -22,7 +22,7 @@ export default function Home() {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        setShortURL(data.shortUrl)
+        setShortURL(data.url)
       });
   }
 
@@ -47,7 +47,7 @@ export default function Home() {
           <form className={styles.card} onSubmit={handleSubmit}>
             <input ref={inputRef} type="text" className={styles.input} placeholder="URL" />
             <button className={styles.button}>Acorta</button>
-            <span className={styles.input}>{shortURL}</span>
+            <p className={styles.input}>La url acortada es: <span className={styles.span}>{shortURL}</span></p>
           </form>
         </div>
 
