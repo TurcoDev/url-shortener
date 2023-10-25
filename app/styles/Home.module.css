@@ -128,6 +128,21 @@
   color: rgb(252, 82, 82);
 }
 
+.ul{
+  margin: 50px;
+  color: #ff37cd;
+  display: flex;
+  
+}
+
+.li{
+  border: 2px solid #fff;
+  padding: 10px;
+  margin: 5px;
+  width: fit-content;
+  list-style: none;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
