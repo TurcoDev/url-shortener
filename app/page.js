@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from './styles/Home.module.css'
 import { useRef, useState } from 'react';
 
+
 export default function Home() {
   const inputRef = useRef();
   const [shortURL, setShortURL] = useState('');
@@ -11,8 +12,8 @@ export default function Home() {
     e.preventDefault();
     const url = inputRef.current.value;
     // console.log(url);
-
-    fetch('/api/shortUrl', {
+  
+    fetch('/api/createShortUrl', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,9 +23,11 @@ export default function Home() {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        setShortURL(data.url)
-      });
+        setShortURL(data)
+      })
+      .catch(error => {throw new Error('Failed to fetch data')})
   }
+  
 
   return (
     <div className={styles.container}>
@@ -46,11 +49,13 @@ export default function Home() {
         <div className={styles.grid}>
           <form className={styles.card} onSubmit={handleSubmit}>
             <input ref={inputRef} type="text" className={styles.input} placeholder="URL" />
-            <button className={styles.button}>Acorta</button>
+            <button className={styles.button}>Acortar</button>
             <p className={styles.input}>La url acortada es: <span className={styles.span}>{shortURL}</span></p>
           </form>
         </div>
 
+
+        {/* <button className={styles.button} onClick={listUrls}>Listar</button> */}
       </main>
     </div>
   )

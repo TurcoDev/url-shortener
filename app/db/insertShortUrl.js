@@ -14,7 +14,8 @@ export default async function insertUrl(url) {
     }
   
     const newUrlModel = new ShortUrl(newUrlObj);
-    await newUrlModel.save();
+    return await newUrlModel.save()
+    
     
   } catch (error) {
     console.log({message: "Error al guardar en la db", error});

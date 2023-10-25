@@ -6,10 +6,11 @@ export async function POST(req) {
 
     const data = await req.json();
     const { url } = data;
-    // console.log(data);
-    await insertUrl(url)
+    // const urlInserted = await insertUrl(url)
+    const { short } = await insertUrl(url)
+    // console.log(urlInserted);
 
-    return NextResponse.json({ url }, {
+    return NextResponse.json(short, {
       status: 200,
     });
   } catch (error) {
