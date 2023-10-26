@@ -6,7 +6,7 @@
 ### 🏠 [Homepage](https://github.com/TurcoDev/url-shortener)
 
 ### Screenshot
-![Image text](https://github.com/TurcoDev/url-shortener/tree/master/app/img/front-image.png)
+![Image text](https://raw.githubusercontent.com/TurcoDev/url-shortener/tree/master/app/img/front-image.png)
 
 ## Install
 
