@@ -1,21 +1,35 @@
 # Welcome to Url Shorter 👋
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
 
-> Litle aplication for save in mongodb urls and your short url generated automaticaly
+> Small application that stores short url together with their real url in a database MongoDB to later be easily consulted and used
 
 ### 🏠 [Homepage](https://github.com/TurcoDev/url-shortener)
+
+### Screenshot
+![Image text](https://github.com/TurcoDev/url-shortener/tree/master/app/img/front-image.png)
 
 ## Install
 
 ```sh
-npm install
+$ git clone https://github.com/TurcoDev/url-shortener.git
+$ cd url-shortener
+$ npm install
+$ npm run dev
 ```
 
 ## Usage
 
 ```sh
-npm run dev
+$ npm start
 ```
+
+## Technologies
+***
+A list of technologies used within the project:
+* [NextJS](https://nextjs.org/): Version 13.5.6
+* [MongoDB](https://www.mongodb.com/es): Version 5.0.5
+* [Mongoose](https://mongoosejs.com/): Version 7.6.3
+
 
 ## Author
 
@@ -27,7 +41,3 @@ npm run dev
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
